@@ -1,5 +1,5 @@
 # 1 Introduction
-This document serves as a guide to 3rd party system developers who wish to integrate with Lolly Rewards Coupon API.
+This document serves as a guide to 3rd party system developers who wish to integrate with the Lolly Rewards Coupon API.
 The Coupon API allows 3rd party systems 
 
 - to validate coupon codes
@@ -10,7 +10,7 @@ Most interactions with lollyrewards.com require that requests are digitally sign
 The following sections describe how to do this. 
 For the command line operations, please clone this repository 
 
-	git clone TODO
+	git clone https://github.com/lollyrewards/lrapi-client-php.git
 
 and navigate to the top level directory.
 
