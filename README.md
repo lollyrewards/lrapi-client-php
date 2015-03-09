@@ -21,7 +21,7 @@ You will need to pick an email address that will uniquely identify you (or your 
 
 To generate a new cryptographic key, run
 	
-	./generate_key_and_cert.sh your_authoritative_email@example.com
+	./generate_key.sh your_authoritative_email@example.com
 
 Your new key will be saved to __your_authoritative_email@example.com.key__ .
 
