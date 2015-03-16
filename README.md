@@ -23,7 +23,7 @@ To generate a new cryptographic key, run
 	
 	./generate_key.sh your_authoritative_email@example.com
 
-Your new key will be saved to __your_authoritative_email@example.com.key__ .
+Your new key will be saved to `your_authoritative_email@example.com.key`.
 
 ## 2.2 Register your crypto key with your account
 To be able to use this key, you first need to register it with lollyrewards.com.
