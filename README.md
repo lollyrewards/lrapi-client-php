@@ -1,3 +1,6 @@
+![Version: 1.0.0-RC1](https://img.shields.io/badge/version-1.0.0--RC1-green.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+
 # 1 Introduction
 This document serves as a guide to 3rd party system developers who wish to integrate with the Lolly Rewards Coupon API.
 The Coupon API allows 3rd party systems 
