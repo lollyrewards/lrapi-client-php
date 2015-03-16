@@ -51,7 +51,7 @@ class LollyRewardsAPI
             $jRegister['display_name'] = $display_name;
         }
         if ($revoke_old_keys) {
-            $revoke_old_keys["disable_prev_keys"] = $revoke_old_keys;
+            $jRegister["disable_prev_keys"] = $revoke_old_keys;
         }
         $jRegister['sig_sha512_rsa'] = signJson($this->private_key, $jRegister);
         echo "Sending \n";
