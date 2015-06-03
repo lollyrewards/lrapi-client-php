@@ -60,14 +60,13 @@ switch ($cmd) {
             exit(-1);
         }
         try {
-            $resp = $LR->register_pk(isset($argv[3]) ? $argv[3] : NULL, true);
+            $resp = $LR->register_pk(isset($argv[3]) ? $argv[3] : NULL);
             $resp_arr = json_decode($resp,true);
             if (isset($resp_arr["pubkey_uri"])) {
                 write_to_account_pk($from_account, $resp_arr["pubkey_uri"]);
                 $resp .= "\n";
                 $resp .= "Your .accounts file  has been updated.\n";
                 $resp .= "A confirmation email has been sent to $from_account.\n";
-                $resp .= "Any old keys associated with $from_account are now revoked.\n";
             }
 
         } catch (Exception $e) {
@@ -87,7 +86,8 @@ switch ($cmd) {
             exit(-1);
         }
         try {
-            $resp = $LR->confirm_pk($argv[3]);
+            $resp = $LR->confirm_pk($argv[3],true)."\n\n";
+            $resp .= "Any old keys associated with $from_account are now revoked.\n";
         } catch (Exception $e) {
             echo $e->getMessage();
             exit(-1);

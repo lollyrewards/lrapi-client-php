@@ -33,7 +33,7 @@ class LollyRewardsAPI
         $this->http = new HttpEndpoint($backend_host, $http_auth_username, $http_auth_password);
     }
 
-    public function register_pk($display_name = NULL, $revoke_old_keys = false)
+    public function register_pk($display_name = NULL)
     {
         $rsa = new Crypt_RSA();
         $rsa->loadKey($this->private_key);
@@ -50,20 +50,20 @@ class LollyRewardsAPI
         if ($display_name) {
             $jRegister['display_name'] = $display_name;
         }
-        if ($revoke_old_keys) {
-            $jRegister["disable_prev_keys"] = $revoke_old_keys;
-        }
         $jRegister['sig_sha512_rsa'] = signJson($this->private_key, $jRegister);
         echo "Sending \n";
         echo str_replace("\"", "\\\"", json_encode($jRegister, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT)) . "\n";
         return $this->http->post('/register', $jRegister);
     }
 
-    public function confirm_pk($confirm_code) {
+    public function confirm_pk($confirm_code,$revoke_old_keys = false) {
         $jConfirm = array(
             "from_address" => $this->pubkey_uri,
             "nonce" => $confirm_code,
             "ts" => millitime());
+	if ($revoke_old_keys) {
+            $jConfirm["disable_prev_keys"] = "1";
+        }
         $jConfirm['sig_sha512_rsa'] = signJson($this->private_key, $jConfirm);
         return $this->http->post('/register/confirm', $jConfirm);
     }
