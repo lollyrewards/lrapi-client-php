@@ -1,4 +1,4 @@
-![Version: 1.0.0-RC1](https://img.shields.io/badge/version-1.0.0--RC1-green.svg)
+![Version: 1.0.0-RC2](https://img.shields.io/badge/version-1.0.0--RC2-green.svg)
 ![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 # 1 Introduction
