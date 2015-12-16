@@ -43,7 +43,7 @@ Check your inbox for the confirmation email, click on __Confirm your account__ a
 Ignore the password dialog and look for the query parameter __n=[some uuid]__ . 
 Copy and paste this confirmation code, as you will need it as a parameter for the next command:
 	
-	./lr your_email@example.com confirm [confirmation_code]
+	php lr.php your_email@example.com confirm [confirmation_code]
 
 You should get a *{"status":"ok"}* response, which indicates that you are now ready to send digitally signed requests to lollyrewards.com using the client library.
 
